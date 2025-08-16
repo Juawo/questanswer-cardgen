@@ -1,0 +1,1 @@
+// Se comunica com a API, recebe as cartas que já existem via GET e envia as cartas geradas com POST

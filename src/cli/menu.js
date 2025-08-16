@@ -1,0 +1,1 @@
+// Menu em CLI para escolher (Gerar 1 carta de X categoria ou Gerar uma carta de cada categoria)
