@@ -1,0 +1,1 @@
+// Constrói os prompt's para que o generator possa usar

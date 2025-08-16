@@ -1,0 +1,1 @@
+// Converte o texto gerado pela IA para JSON válido (CreateCardRequestDto)
