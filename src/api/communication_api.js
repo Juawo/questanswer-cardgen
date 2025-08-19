@@ -9,7 +9,7 @@ export async function getCardsFromCategory(category) {
     let res = await axios.get(`${process.env.URL_API}api/card/Category/${category}`);
     for (const card of res.data) {
         answers.push(card.answer);
-        console.log(card.answer);
+        // console.log(card.answer);
     }
     return answers;
 }
