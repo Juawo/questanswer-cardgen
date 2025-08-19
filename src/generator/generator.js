@@ -1,1 +1,1 @@
-// Recebe os prompts de prompt_builder e se comunica com a IA e cria novas cartas
+// Recebe os prompts de prompt_builder e se comunica com a IA e cria novas cartas - 2

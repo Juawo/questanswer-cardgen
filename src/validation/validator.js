@@ -1,1 +1,1 @@
-// Valida as cartas geradas por generator
+// Valida as cartas geradas por generator - 5

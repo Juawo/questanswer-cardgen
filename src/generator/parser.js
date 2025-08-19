@@ -1,1 +1,1 @@
-// Converte o texto gerado pela IA para JSON válido (CreateCardRequestDto)
+// Converte o texto gerado pela IA para JSON válido (CreateCardRequestDto) - 4
