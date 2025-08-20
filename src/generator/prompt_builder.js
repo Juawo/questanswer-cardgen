@@ -1,12 +1,42 @@
 // Constrói os prompt's para que o generator possa usar - 3
 import { getCardsFromCategory } from "../api/communication_api.js"
 import { readFile } from "fs/promises";
+import path from "path";
+import { fileURLToPath } from "url";
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export async function promptBuilder(jsonPromptPath, category)
 {
-    let jsonPrompt = JSON.parse(await readFile(jsonPromptPath, "utf-8"));
+     const fullPath = path.resolve(__dirname, "../../", jsonPromptPath);
+    let jsonPrompt = JSON.parse(await readFile(fullPath, "utf-8"));
     const cards = await getCardsFromCategory(category);
     let prompt = jsonPrompt["gerar-carta"] + "\n" + JSON.stringify(cards);
     return prompt;
+}
+
+export async function promptBuilderCase(category){
+    switch (category) {
+        case "local":
+            return await promptBuilder("prompts/local.json", category);
+        break;
+        case "momento":
+            return await promptBuilder("prompts/momento.json", category);
+        break;
+        case "objeto":
+            return await promptBuilder("prompts/objeto.json", category);
+        break;
+        case "pessoa":
+            return await promptBuilder("prompts/pessoa.json", category);
+        break;
+        case "pop":
+            return await promptBuilder("prompts/pop.json", category);
+        break;
+    
+        default:
+            console.log("Categoria inválida, tente novamente!");
+            return null;
+        break;
+    }
 }
