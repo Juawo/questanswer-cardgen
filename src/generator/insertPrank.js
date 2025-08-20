@@ -1,8 +1,8 @@
 import { readFile } from "fs/promises";
 import path from "path";
 import { fileURLToPath } from "url";
-import { promptBuilder } from "./prompt_builder";
-import { generateCard } from "./generator";
+import { promptBuilder, promptBuilderCase } from "./prompt_builder.js";
+import { generateCard } from "./generator.js";
 
 // Adiciona "pegadinhas" nas cartas geradas
 
@@ -72,6 +72,6 @@ async function raffleDefautlPrank(prankObj) {
     return prankObj;
 }
 
-let prompt = promptBuilder("local");
-let card = generateCard(prompt); 
+let prompt = await promptBuilderCase("local");
+let card = await generateCard(prompt); 
 console.log(await addPrankInCard(card));

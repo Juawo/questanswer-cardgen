@@ -13,10 +13,6 @@ export async function generateCard(prompt) {
     return ToCardDto(chatCompletion.choices[0]?.message?.content);
 }
 
-export async function generatePrank(prompt) {
-    const chatCompletion = await getGroqChatCompletion(prompt);
-}
-
 export async function getGroqChatCompletion(prompt, model="openai/gpt-oss-20b") {
     if (prompt != null) {
         return groq.chat.completions.create({
