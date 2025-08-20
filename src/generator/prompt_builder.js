@@ -16,21 +16,24 @@ export async function promptBuilder(jsonPromptPath, category)
     return prompt;
 }
 
-export async function promptBuilderCase(category){
+export async function promptBuilderCase(category) {
+    category = category.charAt(0).toUpperCase() + category.slice(1);
+    console.log(category);
+    
     switch (category) {
-        case "local":
+        case "Local":
             return await promptBuilder("prompts/local.json", category);
         break;
-        case "momento":
+        case "Momento":
             return await promptBuilder("prompts/momento.json", category);
         break;
-        case "objeto":
+        case "Objeto":
             return await promptBuilder("prompts/objeto.json", category);
         break;
-        case "pessoa":
+        case "Pessoa":
             return await promptBuilder("prompts/pessoa.json", category);
         break;
-        case "pop":
+        case "Pop":
             return await promptBuilder("prompts/pop.json", category);
         break;
     
