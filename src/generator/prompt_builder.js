@@ -9,7 +9,7 @@ const __dirname = path.dirname(__filename);
 
 export async function promptBuilder(jsonPromptPath, category)
 {
-     const fullPath = path.resolve(__dirname, "../../", jsonPromptPath);
+    const fullPath = path.resolve(__dirname, "../../", jsonPromptPath);
     let jsonPrompt = JSON.parse(await readFile(fullPath, "utf-8"));
     const cards = await getCardsFromCategory(category);
     let prompt = jsonPrompt["gerar-carta"] + "\n" + JSON.stringify(cards);
