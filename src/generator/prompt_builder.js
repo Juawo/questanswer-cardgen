@@ -1,6 +1,7 @@
 // Constrói os prompt's para que o generator possa usar - 3
 import { getCardsFromCategory } from "../api/communication_api.js"
 import { readFile } from "fs/promises";
+import { sleep } from "groq-sdk/core.mjs";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -12,7 +13,17 @@ export async function promptBuilder(jsonPromptPath, category)
     const fullPath = path.resolve(__dirname, "../../", jsonPromptPath);
     let jsonPrompt = JSON.parse(await readFile(fullPath, "utf-8"));
     const cards = await getCardsFromCategory(category);
-    let prompt = jsonPrompt["gerar-carta"] + "\n" + JSON.stringify(cards);
+    let answers = [];
+    for (const card of cards) {
+        if (card.answer) {
+            answers.push(card.answer);
+        }
+    }
+    console.log("(PromptBuilder) Answers : ", answers);
+    
+    let prompt = jsonPrompt["gerar-carta"] + "\n" + JSON.stringify(answers);
+    console.log(prompt);
+    sleep(1000);
     return prompt;
 }
 

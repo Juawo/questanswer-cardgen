@@ -5,14 +5,18 @@ dotenv.config();
 // Se comunica com a API, recebe as cartas que já existem via GET e envia as cartas geradas com POST - 1
 // Precisa refatorar!
 export async function getCardsFromCategory(category) {
-    let answers = [];
-    let res = await axios.get(`${process.env.URL_API}api/card/Category/${category}`);
-    for (const card of res.data) {
-        answers.push(card.answer);
-        console.log(card.answer);
+    try {
+        let res = await axios.get(`${process.env.URL_API}api/card/Category/${category}`);
+        return res.data;
+    } catch (error) {
+        console.error('Erro ao buscar cartas da categoria:', category, error.message);
+        return [];
     }
-    return answers;
 }
 export async function createCard(createCardDto) {
-    await axios.post(`${process.env.URL_API}api/Card/`, createCardDto);
+    try {
+        await axios.post(`${process.env.URL_API}api/Card/`, createCardDto);
+    } catch (error) {
+        console.error('Erro ao criar carta:', error.message);
+    }
 }

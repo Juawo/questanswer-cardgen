@@ -63,9 +63,11 @@ export async function mainMenu() {
 			console.log('Gerando prompt e criando carta...');
 			const prompt = await promptBuilderCase(category);
             const card = await generateCard(prompt);
-            await createCard(card);
-			console.log('Carta criada:');
-			console.log(card);
+            if (card != null) {
+                await createCard(card);
+                console.log('Carta criada:');
+                console.log(card);
+            }
 			console.log('-----------------------------');
 		} else if (mainOpt === 2) {
 			// Gerar uma carta de cada categoria
@@ -73,9 +75,11 @@ export async function mainMenu() {
 				console.log(`Categoria: ${cat.name}`);
 				const prompt = await promptBuilderCase(cat.value);
                 const card = await generateCard(prompt);
-                await createCard(card);
-				console.log('Carta criada:');
-				console.log(card);
+                if (card != null) {
+                    await createCard(card);
+                    console.log('Carta criada:');
+                    console.log(card);
+                }
 				console.log('-----------------------------');
 			}
 		} else if (mainOpt === 3) {
@@ -98,8 +102,11 @@ export async function mainMenu() {
 				console.log(`Gerando carta ${i + 1} de ${num} da categoria ${categories[idx - 1].name}`);
 				const prompt = await promptBuilderCase(category);
                 const card = await generateCard(prompt);
-                await createCard(card);
-				console.log('Carta criada:');
+                if (card != null) {
+                    await createCard(card);
+                    console.log('Carta criada:');
+                    console.log(card);
+                }
 				console.log(card);
 				console.log('-----------------------------');
 			}
