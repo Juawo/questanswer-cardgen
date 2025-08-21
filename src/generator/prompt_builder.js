@@ -18,7 +18,6 @@ export async function promptBuilder(jsonPromptPath, category)
 
 export async function promptBuilderCase(category) {
     category = category.charAt(0).toUpperCase() + category.slice(1);
-    console.log(category);
     
     switch (category) {
         case "Local":

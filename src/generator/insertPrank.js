@@ -72,6 +72,6 @@ async function raffleDefautlPrank(prankObj) {
     return prankObj;
 }
 
-let prompt = await promptBuilderCase("local");
-let card = await generateCard(prompt); 
-console.log(await addPrankInCard(card));
+// let prompt = await promptBuilderCase("objeto");
+// let card = await generateCard(prompt); 
+// console.log(await addPrankInCard(card));

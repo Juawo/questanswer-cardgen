@@ -14,5 +14,5 @@ export async function getCardsFromCategory(category) {
     return answers;
 }
 export async function createCard(createCardDto) {
-    await axios.post(`${process.env.API_URL}/api/card/`, createCardDto);
+    await axios.post(`${process.env.URL_API}api/Card/`, createCardDto);
 }
