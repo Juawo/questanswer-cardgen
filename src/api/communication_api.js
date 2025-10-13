@@ -1,6 +1,7 @@
 import { default as axios } from "axios";
 import dotenv from "dotenv";
-dotenv.config();
+dotenv.config({ path: "../.env" });
+
 
 // Se comunica com a API, recebe as cartas que já existem via GET e envia as cartas geradas com POST - 1
 // Precisa refatorar!
@@ -20,3 +21,5 @@ export async function createCard(createCardDto) {
         console.error('Erro ao criar carta:', error.message);
     }
 }
+
+getCardsFromCategory("pop")
