@@ -22,4 +22,4 @@ export async function createCard(createCardDto) {
     }
 }
 
-getCardsFromCategory("pop")
+// getCardsFromCategory("pop")
