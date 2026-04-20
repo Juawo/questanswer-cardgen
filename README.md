@@ -185,6 +185,6 @@ In development — core generation pipeline implemented and being refined.
 
 This project is part of the QuestAnswer ecosystem:
 
-🎮 Game Client (Godot): (add link here)
+🎮 Game Client (Godot): https://github.com/Juawo/questanswer-client
 
-🧠 Backend API: (add link here)
+🧠 Backend API: https://github.com/Juawo/questanswer-api
